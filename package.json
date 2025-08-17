@@ -2,9 +2,10 @@
   "name": "next-app-template",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build --no-lint",
     "start": "next start",
     "lint": "eslint --fix"
   },
@@ -26,6 +27,7 @@
     "framer-motion": "11.18.2",
     "intl-messageformat": "10.7.16",
     "next": "15.3.1",
+    "next-pwa": "^5.6.0",
     "next-themes": "0.4.6",
     "react": "18.3.1",
     "react-dom": "18.3.1"

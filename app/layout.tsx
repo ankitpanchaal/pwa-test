@@ -15,9 +15,31 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  icons: {
-    icon: "/favicon.ico",
-  },
+  icons: [
+    {
+      rel: "icon",
+      url: "icons/logo-512.png"
+    },
+    {
+      rel: "apple-touch-icon",
+      url: "icons/logo-512.png"
+    }
+  ],
+  manifest: "/manifest.json",
+  keywords: [
+    "testing",
+    "app",
+    "next.js",
+    "pwa"
+  ],
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#00ff00" },
+    { media: "(prefers-color-scheme: dark)", color: "#00ff00" },
+  ],
+  authors: [
+    { name: "John Doe", url: "https://johndoe.com" },
+  ],
+  viewport: "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
 };
 
 export const viewport: Viewport = {
@@ -34,7 +56,12 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head />
+      <head>
+        <meta name="theme-color" content="#fff" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/icons/logo-512.png" />
+        <link rel="apple-touch-icon" href="/icons/logo-512.png" />
+        </head>
       <body
         className={clsx(
           "min-h-screen text-foreground bg-background font-sans antialiased",
